@@ -4,6 +4,6 @@ node{
 }
   stage('mvn packeg'){
     def maven_home = tool name: 'maven-test', type: 'maven'
-    sh "${maven_home}/bin/mvn"
+    sh "${maven_home}/bin/mvn/package"
   }
 }
