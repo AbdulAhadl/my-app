@@ -3,7 +3,7 @@ node{
       git 'https://github.com/AbdulAhadl/my-app.git'
 }
   stage('mvn packeg'){
-    def maven_home = tool name: '', type: 'maven'
+    def maven_home = tool name: 'maven-test', type: 'maven'
     sh '${maven_home}/bin/mvn'
   }
 }
