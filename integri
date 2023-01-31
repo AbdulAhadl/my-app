@@ -2,10 +2,10 @@ node{
   stage('git checkout'){
       git 'https://github.com/AbdulAhadl/my-app.git'
 }
-  stage('mvn packeg'){
-    def maven_home = tool name: 'maven-test', type: 'maven'
-    sh "${maven_home}/bin/mvn package"
-  }
+  #stage('mvn packeg'){
+   # def maven_home = tool name: 'maven-test', type: 'maven'
+    #sh "${maven_home}/bin/mvn package"
+  #}
  stage('tomcate-deploy'){
   sshagent(['test-intigriti']) {
      ssh 'scp -o StrictHostKeyChecking=no target/*.war/ root@ip-172-31-36-221:apache-tomcat-9.0.71/bin/webapp/'
