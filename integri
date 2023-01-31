@@ -1,5 +1,9 @@
 node{
-stage('git checkout'){
-
+  stage('git checkout'){
+      git 'https://github.com/AbdulAhadl/my-app.git'
 }
+  stage('mvn packeg'){
+    def maven_home = tool name: '', type: 'maven'
+    sh '${maven_home}/bin/mvn'
+  }
 }
