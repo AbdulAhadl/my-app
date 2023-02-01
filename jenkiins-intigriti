@@ -1,6 +1,6 @@
 pipeline{
 agent any
-environmanet{
+environment{
 path = "/opt/test-maven:$PATH"
 }
 stages{
