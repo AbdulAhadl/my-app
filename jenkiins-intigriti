@@ -1,8 +1,15 @@
 pipeline{
 agent any
+environmanet{
+path = "/opt/test-maven:$PATH"
+}
 stages{
-    stage('git checkout'){
-    
+    stage("git checkout"){
+         git 'https://github.com/AbdulAhadl/my-app.git'
+    }
+    stage("maven-package")
+    {
+    sh 'mvn clean package'
     }
 }
 }
